@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories form</title>
+</head>
+<body>
+    {% if myForm.errors %}
+    <p style="color:red">Wrong information, please review</p>
+    {% endif %}
+    <form action="{% url 'CategoriesForm' %}" method="post"> {% csrf_token %}
+        <table>
+            {{myForm.as_table}}
+        </table>
+        <input type="submit" class="btn btn-primary" value="Submit">
+</body>
+</html>

@@ -1,0 +1,10 @@
+<p>User search: {{name}}</p>
+{% if users %}
+ 
+<ul>
+{% for user in users %}
+    <li> {{user.name}} {{user.last_name}} is register </li>
+{% endfor %}
+</ul>
+
+{% endif %}
